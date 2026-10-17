@@ -703,7 +703,7 @@ html:has(.ficha-hoja[open]) {
 /* ---------- Frases: una a la vez, fijas mientras se hace scroll (escritorio y móvil) ---------- */
 .frases {
   position: relative;
-  height: calc(var(--n) * 140svh + 100svh);
+  height: calc(var(--n) * 90svh + 100svh);
 }
 .frases-escena {
   position: sticky;
