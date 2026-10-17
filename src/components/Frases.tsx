@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 
 const FRASES = [
   "Un museo guarda lo que un país decide no olvidar. Una pared vacía no borra lo que colgó en ella.",
-  "Retirar una pieza de la sala no la retira de la historia.",
   "Un país tiene heridas, y es válido recordarlas: callar no las cierra.",
   "Aquí cada pieza vuelve a tener su nombre, su fecha y su historia.",
 ];
