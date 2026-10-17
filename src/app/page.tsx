@@ -1,69 +1,74 @@
 import Image from "next/image";
+import { Cierre } from "@/components/Cierre";
+import { Frases } from "@/components/Frases";
+import { PiezasEnPared } from "@/components/PiezasEnPared";
+import { Reveal } from "@/components/Reveal";
+import { Vestibulo } from "@/components/Vestibulo";
+import { FOTOS, PIEZAS, type Foto } from "@/data/piezas";
+
+function Fotografia({ foto, ancho, alto, sizes, className = "" }: { foto: Foto; ancho: number; alto: number; sizes: string; className?: string }) {
+  return (
+    <figure className={className}>
+      <div className="foto overflow-hidden">
+        <Image src={foto.archivo} alt={foto.alt} width={ancho} height={alto} sizes={sizes} className="h-auto w-full" />
+      </div>
+      <figcaption className="pequeno mt-3 opacity-90">{foto.pie}</figcaption>
+    </figure>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Vestibulo />
+
+      {/* Contexto: tres frases, una a la vez, mientras se hace scroll */}
+      <Frases />
+
+      <PiezasEnPared piezas={PIEZAS} />
+
+      {/* Antes y después: fotografías publicadas por la prensa */}
+      <section className="px-[var(--m)] py-[clamp(72px,10vw,140px)]">
+        <div className="mx-auto max-w-[1100px]">
+          <h2 className="display t-display">Lo que había, y lo que quedó.</h2>
+          <p className="mt-6 max-w-[48ch] leading-snug">
+            Fotografías publicadas por la prensa el 15 y 16 de octubre de 2026.
           </p>
+          <div className="mt-14 grid gap-12 min-[900px]:grid-cols-12 min-[900px]:gap-[var(--m)]">
+            <Reveal className="min-[900px]:col-span-4">
+              <Fotografia foto={FOTOS.antes} ancho={432} alto={615} sizes="(min-width: 900px) 360px, 100vw" />
+            </Reveal>
+            <Reveal delay={100} className="min-[900px]:col-span-4 min-[900px]:mt-24">
+              <Fotografia foto={FOTOS.esquina} ancho={900} alto={1199} sizes="(min-width: 900px) 360px, 100vw" />
+            </Reveal>
+            <Reveal delay={200} className="min-[900px]:col-span-4 min-[900px]:mt-48">
+              <Fotografia foto={FOTOS.muro} ancho={1000} alto={750} sizes="(min-width: 900px) 360px, 100vw" />
+            </Reveal>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* La calle: campo claro */}
+      <section className="bg-[var(--field)] px-[var(--m)] py-[clamp(96px,14vw,200px)] text-[var(--field-ink)]">
+        <div className="grid gap-x-[var(--m)] gap-y-16 min-[900px]:grid-cols-12 min-[900px]:gap-y-20">
+          <Reveal className="min-[900px]:col-span-5">
+            <p className="declaracion max-w-[34ch]">
+              Antes de estar en una sala, la memoria estuvo en la calle: bordada, cargada, marchada.
+            </p>
+          </Reveal>
+          <Reveal delay={100} className="min-[900px]:col-span-7">
+            <Fotografia foto={FOTOS.corazon} ancho={1850} alto={1250} sizes="(min-width: 900px) 58vw, 100vw" />
+          </Reveal>
+          <Reveal className="min-[900px]:col-span-7">
+            <Fotografia foto={FOTOS.colcha} ancho={990} alto={660} sizes="(min-width: 900px) 58vw, 100vw" />
+          </Reveal>
+          <Reveal delay={100} className="min-[900px]:col-span-4 min-[900px]:col-start-9 min-[900px]:self-end">
+            <Fotografia foto={FOTOS.constituyente} ancho={1024} alto={652} sizes="(min-width: 900px) 30vw, 100vw" />
+          </Reveal>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <Cierre />
+    </>
   );
 }

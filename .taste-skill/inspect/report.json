@@ -1,0 +1,1141 @@
+{
+ "url": "http://localhost:3123",
+ "at": "2026-10-17T05:05:44.888Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.6,
+    0.61,
+    0.99,
+    0.26,
+    0.95,
+    0.72,
+    0.72,
+    0.67,
+    0.28,
+    0.81,
+    0.72,
+    0.72
+   ],
+   "motion": {
+    "elements": 28,
+    "css": 3,
+    "transitions": 2,
+    "scripted": 23,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 13628,
+     "screens": 15.1,
+     "words": 230,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Farchivo%2Fmuseo-entrada.jpg&w=750&q",
+      "image?url=%2Farchivo%2Fmuseo-sala.jpg&w=1080&q=7"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Lo que se retira, se nombra.",
+     "words": 6,
+     "chars": 28,
+     "lines": 2,
+     "size": 85.4,
+     "vw": 5.9,
+     "font": "Cormorant Garamond",
+     "weight": 500,
+     "tracking": -0.03,
+     "leading": 0.95,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.46,
+     "top": 307,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Lo que se retira, se nombra.",
+     "words": 6,
+     "lines": 2,
+     "size": 85.4,
+     "font": "Cormorant Garamond"
+    },
+    "headings": [
+     {
+      "text": "Lo que se retira, se nombra.",
+      "words": 6,
+      "chars": 28,
+      "lines": 2,
+      "size": 85.4,
+      "vw": 5.9,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 307,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Un museo guarda lo que un país decide no olvidar.",
+      "words": 10,
+      "chars": 49,
+      "lines": 2,
+      "size": 36,
+      "vw": 2.5,
+      "font": "Inter",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.4,
+      "top": 1278,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Lo que se nombra, permanece.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 85.4,
+      "vw": 5.9,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 12538,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Permanece",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 374.4,
+      "vw": 26,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 13365,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 3,
+     "centered": 0,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "Cormorant Garamond",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      15,
+      18,
+      24,
+      36,
+      85,
+      374
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 18,
+      "leading": 1.38,
+      "weight": 400,
+      "tracking": -0.005,
+      "contrast": 16.7
+     },
+     "measureChars": 76,
+     "max": {
+      "size": 374.4,
+      "vw": 26,
+      "font": "Cormorant Garamond",
+      "text": "Permanece"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#121211",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.03,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#121211",
+       "top": 900,
+       "hsl": {
+        "h": 60,
+        "s": 0.03,
+        "l": 0.07
+       }
+      },
+      {
+       "color": "#1d1c1a",
+       "top": 990,
+       "hsl": {
+        "h": 40,
+        "s": 0.05,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#efefed",
+       "top": 12384,
+       "hsl": {
+        "h": 60,
+        "s": 0.06,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#121211",
+       "share": 0.72
+      },
+      {
+       "color": "#f3f2ef",
+       "share": 0.22
+      },
+      {
+       "color": "#bab8b2",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c4122e",
+      "hsl": {
+       "h": 351,
+       "s": 0.83,
+       "l": 0.42
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 1,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Entrar al museo"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.46
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "cormorant garamond",
+     "inter"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.68,
+    0.74,
+    0.99,
+    0.28,
+    0.75,
+    0.75,
+    0.75,
+    0.6,
+    0.99,
+    0.75,
+    0.75,
+    0.75
+   ],
+   "motion": {
+    "elements": 28,
+    "css": 3,
+    "transitions": 2,
+    "scripted": 23,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 15277,
+     "screens": 14.9,
+     "words": 230,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Farchivo%2Fmuseo-entrada.jpg&w=828&q",
+      "image?url=%2Farchivo%2Fmuseo-sala.jpg&w=750&q=75"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Lo que se retira, se nombra.",
+     "words": 6,
+     "chars": 28,
+     "lines": 2,
+     "size": 54.5,
+     "vw": 7.1,
+     "font": "Cormorant Garamond",
+     "weight": 500,
+     "tracking": -0.03,
+     "leading": 0.95,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.96,
+     "top": 140,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Lo que se retira, se nombra.",
+     "words": 6,
+     "lines": 2,
+     "size": 54.5,
+     "font": "Cormorant Garamond"
+    },
+    "headings": [
+     {
+      "text": "Lo que se retira, se nombra.",
+      "words": 6,
+      "chars": 28,
+      "lines": 2,
+      "size": 54.5,
+      "vw": 7.1,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 140,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Un museo guarda lo que un país decide no olvidar.",
+      "words": 10,
+      "chars": 49,
+      "lines": 2,
+      "size": 28.4,
+      "vw": 3.7,
+      "font": "Inter",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.77,
+      "top": 1530,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Lo que se nombra, permanece.",
+      "words": 5,
+      "chars": 28,
+      "lines": 1,
+      "size": 54.5,
+      "vw": 7.1,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 14245,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Permanece",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 199.7,
+      "vw": 26,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 15137,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 3,
+     "centered": 0,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "Cormorant Garamond",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      15,
+      18,
+      24,
+      28,
+      55,
+      200
+     ],
+     "sizeCount": 7,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 18,
+      "leading": 1.38,
+      "weight": 400,
+      "tracking": -0.005,
+      "contrast": 16.7
+     },
+     "measureChars": 76,
+     "max": {
+      "size": 199.7,
+      "vw": 26,
+      "font": "Cormorant Garamond",
+      "text": "Permanece"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#121211",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.03,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#121211",
+       "top": 1080,
+       "hsl": {
+        "h": 60,
+        "s": 0.03,
+        "l": 0.07
+       }
+      },
+      {
+       "color": "#1d1c1a",
+       "top": 1202,
+       "hsl": {
+        "h": 40,
+        "s": 0.05,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#efefed",
+       "top": 14147,
+       "hsl": {
+        "h": 60,
+        "s": 0.06,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#121211",
+       "share": 0.72
+      },
+      {
+       "color": "#f3f2ef",
+       "share": 0.22
+      },
+      {
+       "color": "#bab8b2",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c4122e",
+      "hsl": {
+       "h": 351,
+       "s": 0.83,
+       "l": 0.42
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 1,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Entrar al museo"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.5
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "cormorant garamond",
+     "inter"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.68,
+    0.81,
+    0.97,
+    0.88,
+    0.88,
+    0.83,
+    0.71,
+    0.35,
+    0.83,
+    0.83,
+    0.83,
+    0.59
+   ],
+   "motion": {
+    "elements": 28,
+    "css": 3,
+    "transitions": 2,
+    "scripted": 23,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 13104,
+     "screens": 15.5,
+     "words": 229,
+     "img": 6,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 1,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "image?url=%2Farchivo%2Fmuseo-entrada.jpg&w=640&q"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Lo que se retira, se nombra.",
+     "words": 6,
+     "chars": 28,
+     "lines": 2,
+     "size": 40,
+     "vw": 10.3,
+     "font": "Cormorant Garamond",
+     "weight": 500,
+     "tracking": -0.03,
+     "leading": 0.95,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 140,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Lo que se retira, se nombra.",
+     "words": 6,
+     "lines": 2,
+     "size": 40,
+     "font": "Cormorant Garamond"
+    },
+    "headings": [
+     {
+      "text": "Permanece",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.24,
+      "top": 31,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Lo que se retira, se nombra.",
+      "words": 6,
+      "chars": 28,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 140,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Un museo guarda lo que un país decide no olvidar.",
+      "words": 10,
+      "chars": 49,
+      "lines": 3,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Inter",
+      "weight": 500,
+      "tracking": -0.015,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.72,
+      "top": 1327,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Lo que se nombra, permanece.",
+      "words": 5,
+      "chars": 28,
+      "lines": 2,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 11844,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Permanece",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 101.4,
+      "vw": 26,
+      "font": "Cormorant Garamond",
+      "weight": 500,
+      "tracking": -0.03,
+      "leading": 0.95,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 13033,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 3,
+     "centered": 0,
+     "medianWords": 5,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Inter",
+       "share": 0.95,
+       "mono": false
+      },
+      {
+       "family": "Cormorant Garamond",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      14,
+      18,
+      24,
+      40,
+      101
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Inter",
+      "size": 18,
+      "leading": 1.38,
+      "weight": 400,
+      "tracking": -0.005,
+      "contrast": 16.7
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 101.4,
+      "vw": 26,
+      "font": "Cormorant Garamond",
+      "text": "Permanece"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.02,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#121211",
+     "bodyBgHsl": {
+      "h": 60,
+      "s": 0.03,
+      "l": 0.07
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#121211",
+       "top": 977,
+       "hsl": {
+        "h": 60,
+        "s": 0.03,
+        "l": 0.07
+       }
+      },
+      {
+       "color": "#1d1c1a",
+       "top": 1061,
+       "hsl": {
+        "h": 40,
+        "s": 0.05,
+        "l": 0.11
+       }
+      },
+      {
+       "color": "#efefed",
+       "top": 11746,
+       "hsl": {
+        "h": 60,
+        "s": 0.06,
+        "l": 0.93
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#121211",
+       "share": 0.73
+      },
+      {
+       "color": "#f3f2ef",
+       "share": 0.22
+      },
+      {
+       "color": "#bab8b2",
+       "share": 0.04
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#c4122e",
+      "hsl": {
+       "h": 351,
+       "s": 0.83,
+       "l": 0.42
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 1,
+     "radius": 0,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Entrar al museo"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 3,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.4
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": false,
+     "height": 84,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "cormorant garamond",
+     "inter"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 2 picture(s) on the page (2 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"Un museo guarda lo que un país decide no olvidar\" (screen 2, 26% over a picture); \"Hacer sociedad\" (screen 3, 100% over a picture); \"Memoria y Nación\" (screen 10, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/desktop-fold.jpg",
+   "pages": [
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/desktop-page-01.jpg",
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/desktop-page-02.jpg",
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/desktop-page-03.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/tablet-fold.jpg",
+   "pages": [
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/tablet-page-01.jpg",
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/tablet-page-02.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/mobile-fold.jpg",
+   "pages": [
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/mobile-page-01.jpg",
+    "/Users/julianfelipecardozo/museo-nacional/.taste-skill/inspect/mobile-page-02.jpg"
+   ]
+  }
+ ]
+}

@@ -1,26 +1,770 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #121211;
+  --surface: #1d1c1a;
+  --ghost: #282725;
+  --ink: #f3f2ef;
+  --muted: #bab8b2;
+  --accent: #c4122e;
+  --accent-ink: #ffffff;
+  --field: #efefed;
+  --field-ink: #121211;
+  --m: clamp(16px, 2.2vw, 32px);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --step-small: 0.875rem;
+  --step-body: 1.125rem;
+  --step-lead: 1.5rem;
+  --step-head: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  --step-display: clamp(2.5rem, 1.2rem + 4.6vw, 5.375rem);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--step-body);
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.display {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.t-display {
+  font-size: var(--step-display);
+}
+.t-hero {
+  font-size: clamp(2.5rem, 11.6vw, 5.375rem);
+}
+.t-head {
+  font-size: var(--step-head);
+  line-height: 1;
+}
+.t-lead {
+  font-size: var(--step-lead);
+  line-height: 1.15;
+}
+.t-small,
+.pequeno {
+  font-size: var(--step-small);
+  line-height: 1.45;
+}
+
+/* Frase larga: es un párrafo, no un titular */
+.declaracion {
+  font-size: var(--step-head);
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- Botón: plano, esquinas rectas ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 22px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: var(--step-small);
+  font-weight: 500;
+  letter-spacing: 0;
+  transition: transform 0.25s var(--ease), background-color 0.25s;
+}
+.boton:hover {
+  background: #d9293f;
+  transform: translateY(-2px);
+}
+.boton:active {
+  transform: translateY(0);
+}
+
+.enlace {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  transition: text-decoration-color 0.25s;
+}
+.enlace:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ---------- Movimiento ---------- */
+.rv-oculto {
+  opacity: 0;
+  transform: translateY(26px);
+}
+.rv {
+  transition:
+    opacity 0.9s var(--ease),
+    transform 0.9s var(--ease);
+}
+
+.foto img {
+  transition: transform 1.2s var(--ease);
+}
+.foto:hover img {
+  transform: scale(1.03);
+}
+
+@supports (animation-timeline: view()) {
+  .progreso {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    background: var(--accent);
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: 50;
+    animation: progreso linear both;
+    animation-timeline: scroll(root);
+  }
+  @keyframes progreso {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .deriva {
+    animation: deriva linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  @keyframes deriva {
+    from {
+      transform: translateY(8vh);
+    }
+    to {
+      transform: translateY(-8vh);
+    }
+  }
+
+  .zoom-lento {
+    animation: zoom-lento linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100svh;
+  }
+  @keyframes zoom-lento {
+    to {
+      transform: scale(1.14);
+    }
+  }
+
+  .fuera-arriba {
+    animation: fuera-arriba linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 70svh;
+  }
+  @keyframes fuera-arriba {
+    to {
+      transform: translateY(-40px);
+      opacity: 0.1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .progreso,
+  .deriva,
+  .zoom-lento,
+  .fuera-arriba {
+    animation: none !important;
+  }
+  .rv-oculto {
+    opacity: 1;
+    transform: none;
+  }
+  .rv,
+  .cuadro,
+  .aqui-colgaba,
+  .foto img {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ---------- Vuelve a colgar: una sala de museo vacía, dibujada en código ---------- */
+.sala {
+  container-type: inline-size;
+  position: relative;
+  overflow: hidden;
+  background:
+    url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27180%27%20height%3D%27180%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27/%3E%3CfeColorMatrix%20values%3D%270%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%20.55%200%27/%3E%3C/filter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%27.09%27/%3E%3C/svg%3E"),
+    radial-gradient(90cqw 55cqw at 50% 18%, #4c525d 0%, #383d46 55%, #23262c 100%);
+}
+@media (min-width: 900px) {
+  .sala {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  }
+}
+.sala-techo {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 15cqw;
+}
+.sala-focos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.sala-focos span {
+  position: absolute;
+  top: 11cqw;
+  width: 46cqw;
+  height: 78cqw;
+  transform: translateX(-50%);
+  clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%);
+  background: linear-gradient(to bottom, rgba(255, 236, 200, 0.2), rgba(255, 236, 200, 0.04) 70%, transparent);
+}
+.sala-pared {
+  position: relative;
+  z-index: 2;
+  height: 232cqw;
+}
+.sala-zocalo {
+  position: relative;
+  z-index: 2;
+  height: 2.2cqw;
+  background: linear-gradient(to bottom, #1d2025, #14161a);
+  box-shadow: 0 -0.4cqw 1cqw rgba(0, 0, 0, 0.5);
+}
+.sala-suelo {
+  position: relative;
+  z-index: 2;
+  height: 22cqw;
+  overflow: hidden;
+  perspective: 70cqw;
+  perspective-origin: 50% 0;
+  background: #1d130c;
+}
+.sala-plano {
+  position: absolute;
+  left: -40%;
+  right: -40%;
+  top: 0;
+  height: 120cqw;
+  transform-origin: top;
+  transform: rotateX(64deg);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27240%27%20height%3D%27400%27%3E%3Crect%20width%3D%27240%27%20height%3D%27400%27%20fill%3D%27%234a3322%27/%3E%3Crect%20width%3D%2760%27%20height%3D%27400%27%20fill%3D%27%23533927%27/%3E%3Crect%20x%3D%27120%27%20width%3D%2760%27%20height%3D%27400%27%20fill%3D%27%234f3624%27/%3E%3Crect%20x%3D%2760%27%20width%3D%2760%27%20height%3D%27400%27%20fill%3D%27%2344301f%27/%3E%3Crect%20x%3D%27180%27%20width%3D%2760%27%20height%3D%27400%27%20fill%3D%27%23493221%27/%3E%3Crect%20y%3D%27130%27%20width%3D%27120%27%20height%3D%273%27%20fill%3D%27%232c1d12%27/%3E%3Crect%20x%3D%27120%27%20y%3D%27290%27%20width%3D%27120%27%20height%3D%273%27%20fill%3D%27%232c1d12%27/%3E%3Crect%20x%3D%270%27%20y%3D%27330%27%20width%3D%2760%27%20height%3D%273%27%20fill%3D%27%232c1d12%27/%3E%3Crect%20x%3D%27180%27%20y%3D%2760%27%20width%3D%2760%27%20height%3D%273%27%20fill%3D%27%232c1d12%27/%3E%3C/svg%3E") 0 0 / 22cqw 36cqw;
+}
+.sala-brillo {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 22cqw 7cqw at 18% 8%, rgba(255, 226, 180, 0.22), transparent 70%),
+    radial-gradient(ellipse 22cqw 7cqw at 82% 8%, rgba(255, 226, 180, 0.22), transparent 70%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent 40%, rgba(0, 0, 0, 0.35));
+}
+.sala-tabique {
+  position: absolute;
+  z-index: 3;
+  top: 14cqw;
+  right: 0;
+  width: 5cqw;
+  bottom: 22cqw;
+  background: linear-gradient(to right, #2e323a, #1c1f24);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 3cqw);
+  box-shadow: -1.2cqw 0 2.4cqw rgba(0, 0, 0, 0.5);
+}
+.sala-vineta {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(120cqw 90cqw at 50% 45%, transparent 55%, rgba(8, 9, 11, 0.55) 100%);
+}
+
+.hueco {
+  position: absolute;
+  display: block;
+  color: var(--ink);
+  /* la pintura bajo una obra se conserva más clara que la pared */
+  background: linear-gradient(to bottom, #5a606b, #4b515b);
+  box-shadow:
+    inset 0 1.2cqw 1.4cqw -0.5cqw rgba(0, 0, 0, 0.5),
+    inset 0 -0.3cqw 0.3cqw rgba(255, 255, 255, 0.07),
+    inset 0.5cqw 0 0.8cqw -0.3cqw rgba(0, 0, 0, 0.25);
+  transition: background 0.35s;
+}
+.hueco::after {
+  /* contorno de tiza, con trazo irregular */
+  content: "";
+  position: absolute;
+  inset: -1.1cqw;
+  border: max(2px, 0.4cqw) solid rgba(240, 236, 226, 0.8);
+  border-radius: 2px;
+  filter: url(#tiza);
+  transform: rotate(var(--giro, -0.5deg));
+  transition: opacity 0.3s, transform 0.5s var(--ease);
+  pointer-events: none;
+}
+.hueco:hover:not([data-colgada="true"])::after,
+.hueco:focus-visible::after {
+  transform: rotate(0deg) scale(1.02);
+}
+.hueco:hover:not([data-colgada="true"]) {
+  background: linear-gradient(to bottom, #666d79, #555b66);
+}
+.hueco[data-colgada="true"] {
+  background: none;
+  box-shadow: none;
+}
+.hueco[data-colgada="true"]::after {
+  opacity: 0;
+}
+.gancho {
+  position: absolute;
+  top: 9%;
+  width: max(7px, 1.3cqw);
+  height: max(7px, 1.3cqw);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fbf8f0, #b8b3a6 70%);
+  box-shadow: 0 0.3cqw 0.5cqw rgba(0, 0, 0, 0.6);
+}
+.hueco[data-colgada="true"] .gancho {
+  display: none;
+}
+/* Marco con bisel, sombra sobre la pared y reflejo de vidrio: marco con bisel, sombra sobre la pared y reflejo de vidrio */
+.hueco-cuadro {
+  position: absolute;
+  inset: -2%;
+  display: block;
+  padding: 5%;
+  background: linear-gradient(135deg, #7a6040 0%, #4a3827 38%, #6b5336 62%, #3c2d1e 100%);
+  box-shadow:
+    0 1.6cqw 2.6cqw rgba(0, 0, 0, 0.6),
+    0 0.3cqw 0.5cqw rgba(0, 0, 0, 0.7),
+    inset 0 0 0 max(1px, 0.2cqw) rgba(255, 235, 200, 0.18);
+  animation: cuelga 0.7s var(--ease) both;
+}
+.hueco-paspartu {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27180%27%20height%3D%27180%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27/%3E%3CfeColorMatrix%20values%3D%270%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%20.55%200%27/%3E%3C/filter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%27.09%27/%3E%3C/svg%3E"), #ece5d4;
+  box-shadow: inset 0 0.3cqw 0.7cqw rgba(0, 0, 0, 0.3);
+}
+.hueco-lienzo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 7%;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1b1815, #0b0a09);
+  color: #f3efe6;
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  font-size: max(0.8125rem, 2.3cqw);
+  line-height: 1.06;
+  text-align: left;
+  box-shadow: inset 0 0 1.4cqw rgba(0, 0, 0, 0.7);
+}
+.hueco-lienzo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 34%, transparent 35%);
+  pointer-events: none;
+}
+@keyframes cuelga {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) rotate(-1.5deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Composición: móvil, dos columnas con aire y alturas distintas */
+
+@media (min-width: 900px) {
+  .sala-techo { height: 9cqw; }
+  .sala-focos span { top: 6cqw; width: 30cqw; height: 40cqw; }
+  .sala-zocalo { height: 1.4cqw; }
+  .sala-suelo { height: 11cqw; }
+  .sala-plano { height: 70cqw; }
+  .sala-tabique { top: 8cqw; width: 4cqw; bottom: 11cqw; }
+  .hueco-lienzo { font-size: max(0.875rem, 1.35cqw); }
+}
+
+/* Ficha: hoja inferior en móvil, panel lateral en escritorio */
+.ficha-hoja {
+  margin: auto 0 0;
+  width: 100%;
+  max-width: none;
+  max-height: 88svh;
+  border: 0;
+  background: #1d1c1a;
+  color: var(--ink);
+  padding: 0;
+  overflow-y: auto;
+}
+.ficha-hoja::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+.ficha-cuerpo {
+  position: relative;
+  padding: 28px var(--m) calc(32px + env(safe-area-inset-bottom));
+}
+.ficha-cerrar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--ink);
+}
+.ficha-opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 0;
+  text-align: left;
+  transition: color 0.25s;
+}
+.ficha-opcion:hover {
+  color: #fff;
+}
+@media (min-width: 900px) {
+  .ficha-hoja {
+    margin: 0 0 0 auto;
+    height: 100svh;
+    max-height: none;
+    width: min(500px, 42vw);
+  }
+  .ficha-cuerpo {
+    padding: 64px 40px;
+  }
+}
+
+/* Fotografías reales dentro de los marcos */
+.hueco-foto {
+  position: relative;
+  display: block;
+  padding: 0;
+  background: #0b0a09;
+}
+.hueco-foto::after {
+  display: none;
+}
+
+/* ================= Sala v2: más cercana a las fotografías reales ================= */
+:root {
+  --ruido: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27180%27%20height%3D%27180%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27/%3E%3CfeColorMatrix%20values%3D%270%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%20.55%200%27/%3E%3C/filter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27%20opacity%3D%27.09%27/%3E%3C/svg%3E");
+}
+.sala {
+  background:
+    var(--ruido),
+    radial-gradient(90cqw 55cqw at 46% 22%, #667080 0%, #4c5461 50%, #2b3038 100%);
+}
+.sala-techo {
+  position: relative;
+  z-index: 3;
+}
+.sala-focos span {
+  opacity: 0;
+  transition: opacity 1.3s ease 0.5s;
+  background: linear-gradient(to bottom, rgba(255, 240, 210, 0.3), rgba(255, 240, 210, 0.06) 70%, transparent);
+}
+.sala[data-encendida="true"] .sala-focos span {
+  opacity: 1;
+}
+.sala-oscuridad {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: #04050a;
+  opacity: 0.66;
+  pointer-events: none;
+  transition: opacity 1.5s ease 0.1s;
+}
+.sala[data-encendida="true"] .sala-oscuridad {
+  opacity: 0;
+}
+@media (scripting: none) {
+  .sala-oscuridad {
+    display: none;
+  }
+  .sala-focos span {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sala-oscuridad,
+  .sala-focos span {
+    transition-duration: 0.01ms;
+  }
+}
+.sala-zocalo {
+  background: linear-gradient(to bottom, #232830, #15181d);
+}
+.sala-plano {
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27300%27%20height%3D%27520%27%3E%3Crect%20width%3D%27300%27%20height%3D%27520%27%20fill%3D%27%236b3d25%27/%3E%3Crect%20width%3D%2775%27%20height%3D%27520%27%20fill%3D%27%23734229%27/%3E%3Crect%20x%3D%2775%27%20width%3D%2775%27%20height%3D%27520%27%20fill%3D%27%23663922%27/%3E%3Crect%20x%3D%27150%27%20width%3D%2775%27%20height%3D%27520%27%20fill%3D%27%236f4027%27/%3E%3Crect%20x%3D%27225%27%20width%3D%2775%27%20height%3D%27520%27%20fill%3D%27%23693b24%27/%3E%3Crect%20y%3D%27170%27%20width%3D%27150%27%20height%3D%273%27%20fill%3D%27%233a2012%27/%3E%3Crect%20x%3D%27150%27%20y%3D%27380%27%20width%3D%27150%27%20height%3D%273%27%20fill%3D%27%233a2012%27/%3E%3Crect%20y%3D%27430%27%20width%3D%2775%27%20height%3D%273%27%20fill%3D%27%233a2012%27/%3E%3Crect%20x%3D%27225%27%20y%3D%2780%27%20width%3D%2775%27%20height%3D%273%27%20fill%3D%27%233a2012%27/%3E%3Crect%20x%3D%2775%27%20y%3D%2740%27%20width%3D%2775%27%20height%3D%273%27%20fill%3D%27%233a2012%27/%3E%3C/svg%3E") 0 0 / 24cqw 42cqw;
+}
+.sala-brillo {
+  background:
+    radial-gradient(ellipse 12cqw 14cqw at 16.5% 10%, rgba(255, 224, 170, 0.34), transparent 70%),
+    radial-gradient(ellipse 12cqw 14cqw at 49.5% 10%, rgba(255, 224, 170, 0.34), transparent 70%),
+    radial-gradient(ellipse 12cqw 14cqw at 83.5% 10%, rgba(255, 224, 170, 0.34), transparent 70%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 45%, rgba(0, 0, 0, 0.4));
+}
+
+/* huecos: tonos de pizarra, como en las fotografías */
+.hueco {
+  background: linear-gradient(to bottom, #6a7381, #59616e);
+}
+.hueco:hover:not([data-colgada="true"]) {
+  background: linear-gradient(to bottom, #768090, #656e7c);
+}
+
+/* caja de vitrina vacía, empotrada en la pared */
+.hueco[data-estilo="caja"]:not([data-colgada="true"]) {
+  background: #7e8691;
+  box-shadow:
+    0 0.5cqw 0.9cqw rgba(0, 0, 0, 0.5),
+    inset 0 0 0 0.6cqw #8a929d;
+}
+.hueco[data-estilo="caja"]:not([data-colgada="true"])::before {
+  content: "";
+  position: absolute;
+  inset: 0.6cqw;
+  background: #5f6773;
+  box-shadow:
+    inset 0 1.8cqw 2.2cqw rgba(0, 0, 0, 0.55),
+    inset 1cqw 0 1.4cqw rgba(0, 0, 0, 0.3);
+}
+
+/* marcas de cinta y clavos alrededor del hueco */
+.residuo {
+  position: absolute;
+  width: calc(var(--z) * max(5px, 1.2cqw));
+  height: calc(var(--z) * max(3px, 0.7cqw));
+  background: #ece6d6;
+  opacity: 0.55;
+  border-radius: 45% 55% 50% 50% / 55% 45% 55% 45%;
+  pointer-events: none;
+}
+.residuo:nth-of-type(2) {
+  transform: rotate(18deg);
+  opacity: 0.4;
+}
+.residuo:nth-of-type(3) {
+  transform: rotate(-12deg);
+}
+
+/* cartela blanca que queda en la pared */
+.etiqueta-pared {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.9cqw);
+  width: 46%;
+  height: max(11px, 2.4cqw);
+  background:
+    linear-gradient(#a6a398, #a6a398) 8% 32% / 72% 14% no-repeat,
+    linear-gradient(#a6a398, #a6a398) 8% 68% / 46% 14% no-repeat,
+    #f1eee6;
+  box-shadow: 0 0.2cqw 0.5cqw rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+.cartela-pared {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 1.6cqw);
+  max-width: 100%;
+  padding: 0.5cqw 1cqw;
+  background: #f1eee6;
+  color: #1b1b1a;
+  font-size: max(0.6875rem, 2.7cqw);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  box-shadow: 0 0.2cqw 0.5cqw rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+/* tres estilos de marco al colgar */
+.hueco[data-estilo="negro"] .hueco-cuadro {
+  background: linear-gradient(135deg, #2a2a2a, #0c0c0c 50%, #1f1f1f);
+  padding: 2.4%;
+}
+.hueco[data-estilo="negro"] .hueco-paspartu {
+  padding: 13%;
+  background: var(--ruido), #f4f1ea;
+}
+.hueco[data-estilo="caja"] .hueco-cuadro {
+  background: linear-gradient(145deg, #939aa4, #626975 50%, #80868f);
+  padding: 4.5%;
+}
+.hueco[data-estilo="caja"] .hueco-paspartu {
+  padding: 0;
+  background: #aeb3ba;
+  box-shadow:
+    inset 0 0.9cqw 1.6cqw rgba(0, 0, 0, 0.5),
+    inset 0.6cqw 0 1.1cqw rgba(0, 0, 0, 0.28);
+}
+.hueco[data-estilo="caja"] .hueco-lienzo {
+  background: linear-gradient(160deg, #22252b, #0f1013);
+}
+
+/* tabique en ángulo, como en la esquina de la fotografía */
+.sala-esquina {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .cartela-pared {
+    font-size: max(0.6875rem, 1.05cqw);
+  }
+  .sala-esquina {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 9cqw;
+    bottom: 12.4cqw;
+    width: 21cqw;
+    background: linear-gradient(to right, #343b47, #262c35);
+    transform-origin: left center;
+    transform: perspective(70cqw) rotateY(-26deg);
+    box-shadow: -1.2cqw 0 2.6cqw rgba(0, 0, 0, 0.55);
+  }
+  .esq-hueco {
+    position: absolute;
+    background: linear-gradient(to bottom, #566070, #485160);
+    box-shadow: inset 0 1cqw 1.2cqw -0.4cqw rgba(0, 0, 0, 0.5);
+  }
+  .sala-esquina .etiqueta-pared {
+    height: 2.4cqw;
+  }
+}
+
+/* ---------- Frases: una a la vez, fijas mientras se hace scroll (escritorio y móvil) ---------- */
+.frases {
+  position: relative;
+  height: calc(var(--n) * 140svh + 100svh);
+}
+.frases-escena {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 0 var(--m);
+}
+.frases-frase {
+  grid-area: 1 / 1;
+  width: 100%;
+  max-width: 30ch;
+  opacity: 0;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+@media (min-width: 900px) {
+  .frases-frase {
+    width: 44vw;
+    max-width: none;
+  }
+}
+@media (scripting: none) {
+  .frases {
+    height: auto;
+  }
+  .frases-escena {
+    position: static;
+    height: auto;
+    display: block;
+    padding: 96px var(--m);
+  }
+  .frases-frase {
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 48px;
+  }
+}
+
+/* ---------- Pared con las piezas ya colgadas y los espacios vacíos ---------- */
+.sala-pared {
+  height: var(--alto-m);
+}
+.hueco {
+  left: var(--mx);
+  top: var(--my);
+  width: var(--mw);
+  height: var(--mh);
+}
+.hueco[data-colgada="true"]:hover .hueco-cuadro {
+  transform: translateY(-4px);
+}
+.hueco-cuadro {
+  transition: transform 0.4s var(--ease);
+}
+.hueco:not([data-colgada="true"]) {
+  cursor: help;
+}
+@media (min-width: 900px) {
+  .sala-pared {
+    height: var(--alto-d);
+  }
+  .hueco {
+    left: var(--dx);
+    top: var(--dy);
+    width: var(--dw);
+    height: var(--dh);
+  }
+  .sala-esquina {
+    width: 13cqw;
+  }
+  .etiqueta-pared {
+    top: calc(100% + 0.5cqw);
+    height: max(10px, 1.7cqw);
+  }
 }

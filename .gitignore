@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
+
+# Imágenes de prensa guardadas solo como referencia; no se publican ni se versionan
+/referencias-privadas/
