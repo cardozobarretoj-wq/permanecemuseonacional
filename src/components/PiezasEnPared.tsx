@@ -186,6 +186,12 @@ export function PiezasEnPared({ piezas }: { piezas: Pieza[] }) {
             <span style={{ left: "16.5%" }} />
             <span style={{ left: "49.5%" }} />
             <span style={{ left: "83.5%" }} />
+            {/* En móvil la pared es larga: más filas de focos para que ninguna pieza quede a oscuras. */}
+            {[91, 171, 251, 331].map((t) =>
+              [16.5, 49.5, 83.5].map((l) => (
+                <span key={`${t}-${l}`} className="foco-extra" style={{ left: `${l}%`, ["--t" as string]: `${t}cqw` }} />
+              )),
+            )}
           </div>
 
           <div

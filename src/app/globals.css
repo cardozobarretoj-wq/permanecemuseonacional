@@ -440,19 +440,29 @@ button:focus-visible {
   color: var(--ink);
   padding: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
+}
+/* Con la ficha abierta, la página de fondo no se desplaza. */
+html:has(.ficha-hoja[open]) {
+  overflow: hidden;
 }
 .ficha-hoja::backdrop {
   background: rgba(0, 0, 0, 0.65);
 }
 .ficha-cuerpo {
   position: relative;
-  padding: 28px var(--m) calc(32px + env(safe-area-inset-bottom));
+  padding: 8px var(--m) calc(32px + env(safe-area-inset-bottom));
 }
+/* El botón ocupa su propia fila y se queda visible al desplazar la ficha; nunca queda sobre la imagen. */
 .ficha-cerrar {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 44px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: block;
+  margin: 0 calc(var(--m) * -1) 8px auto;
+  padding-right: 4px;
+  background: #1d1c1a;
+  width: 52px;
   height: 44px;
   font-size: 1.75rem;
   line-height: 1;
@@ -480,7 +490,10 @@ button:focus-visible {
     width: min(500px, 42vw);
   }
   .ficha-cuerpo {
-    padding: 64px 40px;
+    padding: 16px 40px 64px;
+  }
+  .ficha-cerrar {
+    margin-right: -40px;
   }
 }
 
@@ -766,5 +779,25 @@ button:focus-visible {
   .etiqueta-pared {
     top: calc(100% + 0.5cqw);
     height: max(10px, 1.7cqw);
+  }
+}
+
+/* ---------- Luz en móvil: focos a lo largo de toda la pared y viñeta solo en los bordes ---------- */
+.sala-focos span {
+  top: var(--t, 11cqw);
+}
+.sala-focos .foco-extra {
+  width: 56cqw;
+  height: 84cqw;
+}
+.sala-vineta {
+  background: linear-gradient(to right, rgba(8, 9, 11, 0.5), transparent 16%, transparent 84%, rgba(8, 9, 11, 0.5));
+}
+@media (min-width: 900px) {
+  .sala-focos .foco-extra {
+    display: none;
+  }
+  .sala-vineta {
+    background: radial-gradient(120cqw 90cqw at 50% 45%, transparent 55%, rgba(8, 9, 11, 0.55) 100%);
   }
 }
