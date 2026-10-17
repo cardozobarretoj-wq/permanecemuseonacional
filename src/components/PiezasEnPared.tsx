@@ -109,7 +109,7 @@ const vars = (h: Hueco) =>
     "--dx": `${h.d.x}cqw`, "--dy": `${h.d.y}cqw`, "--dw": `${h.d.w}cqw`, "--dh": `${h.d.h}cqw`,
   }) as React.CSSProperties;
 
-type Seleccion = { modo: "ficha"; pieza: Pieza } | { modo: "vacio" } | null;
+type Seleccion = { modo: "ficha"; pieza: Pieza; estilo: Estilo } | { modo: "vacio" } | null;
 
 /**
  * Una sala dibujada en código con las piezas ya colgadas y los espacios que quedaron vacíos.
@@ -210,7 +210,7 @@ export function PiezasEnPared({ piezas }: { piezas: Pieza[] }) {
                   data-estilo={h.estilo}
                   style={vars(h)}
                   aria-label={p ? `Abrir la ficha de ${p.corto}` : "Espacio vacío: una pieza retirada sin nombre público"}
-                  onClick={() => setSel(p ? { modo: "ficha", pieza: p } : { modo: "vacio" })}
+                  onClick={() => setSel(p ? { modo: "ficha", pieza: p, estilo: h.estilo } : { modo: "vacio" })}
                 >
                   {!p &&
                     h.residuos.map(([t, l, z], j) => (
@@ -289,11 +289,17 @@ export function PiezasEnPared({ piezas }: { piezas: Pieza[] }) {
             {sel.modo === "ficha" && (
               <>
                 {imagenDe(sel.pieza) && (
-                  <figure className="mb-6">
-                    <div className="relative aspect-[4/3] max-h-[34svh] w-full bg-black">
-                      <Image src={imagenDe(sel.pieza)!.archivo} alt={imagenDe(sel.pieza)!.alt} fill sizes="(min-width: 900px) 420px, 100vw" className="object-contain" />
+                  <figure className="mb-8">
+                    <div className="ficha-marco" data-estilo={sel.estilo} style={{ ["--ratio" as string]: imagenDe(sel.pieza)!.ratio ?? 1 }}>
+                      <div className="fm-cuadro">
+                        <div className="fm-paspartu">
+                          <div className="fm-foto">
+                            <Image src={imagenDe(sel.pieza)!.archivo} alt={imagenDe(sel.pieza)!.alt} fill sizes="(min-width: 900px) 360px, 80vw" className="object-cover" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <figcaption className="pequeno muted mt-2">Fotografía: {imagenDe(sel.pieza)!.credito}</figcaption>
+                    <figcaption className="pequeno muted mt-4 text-center">Fotografía: {imagenDe(sel.pieza)!.credito}</figcaption>
                   </figure>
                 )}
                 <p className="pequeno muted">{sel.pieza.sala}</p>
