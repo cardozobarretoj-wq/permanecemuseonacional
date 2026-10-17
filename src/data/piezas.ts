@@ -17,7 +17,7 @@ export type Pieza = {
   imagen?: {
     archivo: string;
     alt: string;
-    credito: string;
+    credito?: string;
     /** ancho / alto de la foto, para que el marco la acompañe */
     ratio?: number;
     /** El catálogo del Museo marca esta imagen con restricción de derechos. */
@@ -56,7 +56,7 @@ export const PIEZAS: Pieza[] = [
     autoria: "Fabricante desconocido",
     fecha: "Ca. 2010",
     catalogo: 26225,
-    imagen: { archivo: "/prensa/bandera-orgullo.jpg", alt: "Bandera de seis franjas (violeta, azul, verde, amarillo, naranja y rojo) tendida sobre una mesa.", credito: "crédito por confirmar", ratio: 1.333, restringida: true },
+    imagen: { archivo: "/prensa/bandera-orgullo.jpg", alt: "Bandera de seis franjas (violeta, azul, verde, amarillo, naranja y rojo) tendida sobre una mesa.", credito: "", ratio: 1.333, restringida: true },
     resumen: "Bandera del orgullo gay que perteneció a la activista Elizabeth Castillo, fabricada hacia 2010 por un fabricante desconocido. Mide 30 × 66 cm.",
     contexto: "Según la prensa, hacía parte de cerca de diez piezas sobre la historia LGBTIQ+ y los movimientos feministas en la sala «Hacer sociedad», segundo piso. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -74,19 +74,6 @@ export const PIEZAS: Pieza[] = [
     contexto: "La prensa la señaló entre las piezas retiradas de «Hacer sociedad». Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
   {
-    slug: "campana-marcha-lgbt-2006-bisexuales",
-    corto: "Campaña de la marcha LGBT, pieza bisexuales",
-    titulo: "Campaña publicitaria de la marcha LGBT 2006. Pieza Bisexuales",
-    sala: "Hacer sociedad",
-    tipo: "Material gráfico — papel adherido a madera aglomerada, 66 × 30 × 3 cm",
-    autoria: "Alcaldía Mayor de Bogotá",
-    fecha: "2006",
-    catalogo: 26221,
-    imagen: { archivo: "/prensa/campana-lgbt-2006.jpg", alt: "Plegable rojo con el texto «LGBT 28:06:06», dos símbolos de género entrelazados con dos rostros en blanco y negro, y el lema «Bogotá sin indiferencia».", credito: "crédito por confirmar", ratio: 0.75, restringida: true },
-    resumen: "Pieza para bisexuales de la misma campaña de 2006: fondo rojo, el texto «LGBT 28:06:06» y dos símbolos de género entrelazados.",
-    contexto: "Forma parte de una serie de cuatro piezas (bisexuales, lésbica, gay y trans). Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
-  },
-  {
     slug: "impreso-si-mujer-derechos-reproductivos",
     corto: "Derechos reproductivos de la mujer",
     titulo: "Derechos reproductivos de la mujer",
@@ -95,7 +82,7 @@ export const PIEZAS: Pieza[] = [
     autoria: "Fundación Si Mujer",
     fecha: "1993",
     catalogo: 16470,
-    imagen: { archivo: "/prensa/derechos-reproductivos-si-mujer.jpg", alt: "Plegable con ilustraciones de rostros de mujeres entre plantas y flores, y un texto en el centro.", credito: "crédito por confirmar", ratio: 0.773, restringida: true },
+    imagen: { archivo: "/prensa/derechos-reproductivos-si-mujer.jpg", alt: "Plegable con ilustraciones de rostros de mujeres entre plantas y flores, y un texto en el centro.", credito: "", ratio: 0.773, restringida: true },
     resumen: "Impreso ilustrado de la Fundación Si Mujer sobre los derechos reproductivos de las mujeres, de 1993.",
     contexto: "Hacía parte del recorrido sobre movimientos feministas en «Hacer sociedad». Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -128,7 +115,7 @@ export const PIEZAS: Pieza[] = [
     autoria: "Andrés Eduardo Suárez y Diego Álvarez",
     fecha: "Diciembre de 2001",
     catalogo: 26187,
-    imagen: { archivo: "/prensa/periodico-jano-2001.jpg", alt: "Portada del periódico «Jano», n.º 1, con dos brazos entrelazados en blanco y negro y el texto «La homosexualidad, una forma digna de vivir».", credito: "crédito por confirmar", ratio: 0.75, restringida: true },
+    imagen: { archivo: "/prensa/periodico-jano-2001.jpg", alt: "Portada del periódico «Jano», n.º 1, con dos brazos entrelazados en blanco y negro y el texto «La homosexualidad, una forma digna de vivir».", credito: "", ratio: 0.75, restringida: true },
     resumen: "Primer número del periódico «Jano», de diciembre de 2001. En su portada, dos brazos entrelazados y la frase «La homosexualidad, una forma digna de vivir».",
     contexto: "Es una de las publicaciones del movimiento LGBT colombiano que figuran entre las piezas señaladas. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -190,7 +177,7 @@ export const PIEZAS: Pieza[] = [
     sala: "Hacer sociedad",
     tipo: "Documento electoral",
     fecha: "1990",
-    imagen: { archivo: "/prensa/tarjeton-asamblea-constituyente.jpg", alt: "Papeleta color papel kraft con el texto «Voto por Colombia, sí a una Asamblea Nacional Constituyente».", credito: "crédito por confirmar", ratio: 1.571 },
+    imagen: { archivo: "/prensa/tarjeton-asamblea-constituyente.jpg", alt: "Papeleta color papel kraft con el texto «Voto por Colombia, sí a una Asamblea Nacional Constituyente».", credito: "", ratio: 1.571 },
     resumen: "Tarjetón vinculado al movimiento ciudadano de la Séptima Papeleta, que condujo a la Asamblea Nacional Constituyente: «Voto por Colombia. Sí a una Asamblea Nacional Constituyente».",
     contexto: "Hacía parte del muro sobre la Constitución de 1991 y el proceso de paz. No encontré su registro en el catálogo del Museo. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -229,7 +216,7 @@ export const PIEZAS: Pieza[] = [
     autoria: "Autoría desconocida",
     fecha: "Diciembre de 1978",
     catalogo: 16491,
-    imagen: { archivo: "/prensa/documento-mecanografiado.jpg", alt: "Dos hojas fotocopiadas con texto a máquina, una junto a la otra.", credito: "crédito por confirmar", ratio: 1.354, restringida: true },
+    imagen: { archivo: "/prensa/documento-mecanografiado.jpg", alt: "Dos hojas fotocopiadas con texto a máquina, una junto a la otra.", credito: "", ratio: 1.354, restringida: true },
     resumen: "Manifiesto internacional de la campaña por la contracepción, el aborto y contra la esterilización forzada, elaborado en el Encuentro Nacional de Mujeres, en Cali, en diciembre de 1978.",
     contexto: "Es un documento del movimiento feminista colombiano que figura entre las piezas señaladas. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -242,7 +229,7 @@ export const PIEZAS: Pieza[] = [
     autoria: "Red Comunitaria Trans (RCT), con Estefanía Méndez Ortiz y Natalia Espitia Pachón",
     fecha: "2015",
     catalogo: 26376,
-    imagen: { archivo: "/prensa/cartilla-cuerpos-en-prision.jpg", alt: "Portada de la cartilla «Cuerpos en prisión, mentes en acción», con ilustraciones de cuatro rostros de mujeres trans sobre franjas verticales grises.", credito: "crédito por confirmar", ratio: 0.654, restringida: true },
+    imagen: { archivo: "/prensa/cartilla-cuerpos-en-prision.jpg", alt: "Portada de la cartilla «Cuerpos en prisión, mentes en acción», con ilustraciones de cuatro rostros de mujeres trans sobre franjas verticales grises.", credito: "", ratio: 0.654, restringida: true },
     resumen: "Cartilla de 2015 de la Red Comunitaria Trans para la defensa de los derechos de las mujeres trans y los hombres gais privados de la libertad. Su portada reúne cuatro rostros ilustrados.",
     contexto: "Es una de las publicaciones del activismo trans que figuran entre las piezas señaladas. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -268,7 +255,7 @@ export const PIEZAS: Pieza[] = [
     autoria: "Asociación Democrática de Mujeres Colombianas",
     fecha: "Octubre de 1954",
     catalogo: 23387,
-    imagen: { archivo: "/prensa/nuestras-mujeres-1954.jpg", alt: "Portada del periódico «Nuestras Mujeres», octubre de 1954, con el artículo «La tercera fuerza» y una moción de saludo.", credito: "crédito por confirmar", ratio: 0.725, restringida: true },
+    imagen: { archivo: "/prensa/nuestras-mujeres-1954.jpg", alt: "Portada del periódico «Nuestras Mujeres», octubre de 1954, con el artículo «La tercera fuerza» y una moción de saludo.", credito: "", ratio: 0.725, restringida: true },
     resumen: "Ejemplar de octubre de 1954 de «Nuestras Mujeres», órgano de la Asociación Democrática de Mujeres Colombianas, con el artículo «La tercera fuerza» en portada.",
     contexto: "Es una de las publicaciones del movimiento de mujeres que figuran entre las piezas señaladas. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
@@ -302,7 +289,7 @@ export type Foto = {
   archivo: string;
   alt: string;
   pie: string;
-  credito: string;
+  credito?: string;
   autor: string;
   licencia: string;
   url: string;

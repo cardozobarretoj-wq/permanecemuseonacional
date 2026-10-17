@@ -4,6 +4,9 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { TOTAL_REPORTADO, imagenDe, urlCatalogo, type Pieza } from "@/data/piezas";
 
+/** Espacios vacíos que se suman a los que faltan hasta las 30 piezas reportadas. */
+const ESPACIOS_EXTRA = 2;
+
 type Estilo = "madera" | "negro" | "caja";
 type Caja = { x: number; y: number; w: number; h: number };
 type Hueco = {
@@ -64,7 +67,7 @@ function componer(tipos: boolean[], ratios: (number | undefined)[], m: Medidas, 
 const ESTILOS: Estilo[] = ["madera", "caja", "negro", "madera", "negro", "caja"];
 
 function construir(piezas: Pieza[]) {
-  const total = Math.max(TOTAL_REPORTADO, piezas.length);
+  const total = Math.max(TOTAL_REPORTADO, piezas.length) + ESPACIOS_EXTRA;
   const r = azar(7);
   // Las piezas con nombre quedan repartidas por toda la pared; el resto son espacios vacíos.
   const posiciones = new Set(piezas.map((_, i) => Math.floor(((i + 0.5) * total) / piezas.length)));
@@ -299,7 +302,9 @@ export function PiezasEnPared({ piezas }: { piezas: Pieza[] }) {
                         </div>
                       </div>
                     </div>
-                    <figcaption className="pequeno muted mt-4 text-center">Fotografía: {imagenDe(sel.pieza)!.credito}</figcaption>
+                    {imagenDe(sel.pieza)!.credito && (
+                      <figcaption className="pequeno muted mt-4 text-center">Fotografía: {imagenDe(sel.pieza)!.credito}</figcaption>
+                    )}
                   </figure>
                 )}
                 <p className="pequeno muted">{sel.pieza.sala}</p>

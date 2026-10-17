@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FOTOS, FUENTES } from "@/data/piezas";
 import { Reveal } from "./Reveal";
 
@@ -13,9 +12,9 @@ export function Cierre() {
         <div className="grid gap-12 min-[900px]:grid-cols-12">
           <Reveal className="min-[900px]:col-span-7">
             <p className="display t-display">Lo que se nombra, permanece.</p>
-            <Link href="/" className="boton mt-10">
+            <a href="#" className="boton mt-10">
               Volver al inicio
-            </Link>
+            </a>
           </Reveal>
           <Reveal delay={100} className="min-[900px]:col-span-3 min-[900px]:col-start-10">
             <p className="font-medium">Fuentes</p>
