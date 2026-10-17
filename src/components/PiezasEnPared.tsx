@@ -315,6 +315,14 @@ export function PiezasEnPared({ piezas }: { piezas: Pieza[] }) {
                 </p>
                 <p className="mt-6 leading-relaxed">{sel.pieza.resumen}</p>
                 <p className="pequeno muted mt-4 leading-relaxed">{sel.pieza.contexto}</p>
+                {!sel.pieza.catalogo && sel.pieza.fuenteExterna && (
+                  <p className="mt-8">
+                    <span className="pequeno muted block">Esta pieza no consta en el catálogo en línea del Museo. Fuente:</span>
+                    <a href={sel.pieza.fuenteExterna.url} target="_blank" rel="noopener noreferrer" className="enlace mt-2 inline-block">
+                      {sel.pieza.fuenteExterna.texto}
+                    </a>
+                  </p>
+                )}
                 {sel.pieza.catalogo && (
                   <p className="mt-8">
                     <a href={urlCatalogo(sel.pieza.catalogo)} target="_blank" rel="noopener noreferrer" className="enlace">

@@ -13,6 +13,8 @@ export type Pieza = {
   contexto: string;
   /** Número del objeto en el catálogo en línea del Museo Nacional, si tiene registro. */
   catalogo?: number;
+  /** Fuente externa, para piezas que no constan en el catálogo del Museo. */
+  fuenteExterna?: { texto: string; url: string };
   /** Fotografía de la pieza, si existe. */
   imagen?: {
     archivo: string;
@@ -89,22 +91,41 @@ export const PIEZAS: Pieza[] = [
   {
     slug: "fotografia-por-una-colombia-incluyente",
     corto: "«Por una Colombia incluyente»",
-    titulo: "Fotografía de la marcha «Por una Colombia incluyente»",
+    titulo: "Marcha de la ciudadanía plena LGBT: Por una Colombia incluyente. El cuerpo: primer territorio de paz",
     sala: "Hacer sociedad",
-    tipo: "Fotografía",
-    autoria: "Humberto Rincón Perfetti",
-    resumen: "Registro fotográfico de la movilización por la ciudadanía plena de las personas LGBT.",
-    contexto: "Fotografía de Humberto Rincón Perfetti reportada entre las piezas retiradas de la sala «Hacer sociedad». No encontré su registro exacto en el catálogo del Museo. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
+    tipo: "Fotografía en color",
+    autoria: "Germán Humberto Rincón Perfetti",
+    fecha: "2004",
+    fuenteExterna: { texto: "Secretaría Distrital de la Mujer de Bogotá, sobre la Marcha por la Ciudadanía Plena LGBT (contexto de la marcha)", url: "https://antiguo.sdmujer.gov.co/print/243" },
+    imagen: { archivo: "/prensa/marcha-por-una-colombia-incluyente.jpg", alt: "Fotografía aérea de una avenida de Bogotá llena de gente marchando, con letras que forman las siglas LGBT y banderas de colores.", ratio: 1.596 },
+    resumen: "Fotografía en color de Germán Humberto Rincón Perfetti de la marcha de la ciudadanía plena LGBT de 2004, bajo el lema «Por una Colombia incluyente. El cuerpo: primer territorio de paz».",
+    contexto: "No consta en el catálogo en línea del Museo Nacional. Los datos (autor, año 2004, fotografía en color y el lema de la marcha) salen de la cédula de la pieza que circuló con la imagen; no encontré otra fuente que confirme el lema ni el año. Según la Secretaría Distrital de la Mujer, la marcha se realiza en Bogotá de manera anual desde 1996. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
+  },
+  {
+    slug: "la-ventana-gay-no-1",
+    corto: "Ventana Gay, n.º 1",
+    titulo: "Revista Ventana Gay, n.º 1",
+    sala: "Hacer sociedad",
+    tipo: "Publicación periódica — tinta sobre papel, 21 × 20 cm",
+    autoria: "Manuel Antonio Velandia Mora y León Zuleta",
+    fecha: "1980",
+    fuenteExterna: { texto: "Guerrero Bautista, «Saltemos por la ventana»: surgimiento de la revista «Ventana Gay» desde el punto de vista de Manuel Antonio Velandia Mora, uno de sus fundadores (entrevista, 2018)", url: "http://dx.doi.org/10.5007/1984-8412.2018v15n3p3263" },
+    imagen: { archivo: "/prensa/ventana-gay-1.jpg", alt: "Portada de Ventana Gay n.º 1: el título sobre una gran mano abierta, dibujada encima de una fachada de ventanas.", ratio: 0.73 },
+    resumen: "Primer número de Ventana Gay, de 1980: una mano abierta dibujada sobre una fachada de ventanas, bajo el título de la revista.",
+    contexto: "No consta en el catálogo en línea del Museo Nacional. Los datos salen de la propia revista y de una entrevista a Manuel Velandia, uno de sus fundadores: Ventana Gay se considera la primera revista colombiana de distribución masiva y continuada sobre temática homosexual, gestada en 1980. Velandia recuerda que llegaron a sacar 23 o 24 números, y se imprimía con una roto offset, con la composición hecha a mano. Los datos de técnica y medidas (tinta sobre papel, 21 × 20 cm) vienen de la ficha que acompañó la imagen. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
   {
     slug: "la-ventana-gay-no-2",
-    corto: "La Ventana Gay, n.º 2",
-    titulo: "La Ventana Gay, n.º 2",
+    corto: "Ventana Gay, n.º 2",
+    titulo: "Revista Ventana Gay, n.º 2",
     sala: "Hacer sociedad",
-    tipo: "Publicación periódica",
-    autoria: "Manuel Antonio Velandia y León Zuleta",
-    resumen: "Ejemplar de la revista La Ventana Gay, publicación pionera del activismo homosexual en Colombia.",
-    contexto: "Figura entre los objetos retirados de «Hacer sociedad»; la autoría corresponde a Manuel Antonio Velandia y León Zuleta, según los reportes. No encontré su registro en el catálogo del Museo. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
+    tipo: "Publicación periódica — revista impresa",
+    autoria: "Colectivo de Ventana Gay (Manuel Antonio Velandia Mora, León Zuleta y otros)",
+    fecha: "Octubre",
+    fuenteExterna: { texto: "Guerrero Bautista, «Saltemos por la ventana»: surgimiento de la revista «Ventana Gay» desde el punto de vista de Manuel Antonio Velandia Mora, uno de sus fundadores (entrevista, 2018)", url: "http://dx.doi.org/10.5007/1984-8412.2018v15n3p3263" },
+    imagen: { archivo: "/prensa/ventana-gay-2.jpg", alt: "Portada de Ventana Gay n.º 2, Bogotá, valor $30: «Técnicas del amor gay», «La ley y la homosexualidad», «Lesbianismo / feminismo: liberación ¿para qué?».", ratio: 0.725 },
+    resumen: "Segundo número de Ventana Gay, Bogotá, a $30. En portada anuncia «Técnicas del amor gay», «La ley y la homosexualidad» y «Lesbianismo / feminismo: liberación ¿para qué?».",
+    contexto: "No consta en el catálogo en línea del Museo Nacional. Los datos salen de la propia revista y de una entrevista a Manuel Velandia, uno de sus fundadores: Ventana Gay se considera la primera revista colombiana de distribución masiva y continuada sobre temática homosexual, gestada en 1980. Velandia recuerda que llegaron a sacar 23 o 24 números, y se imprimía con una roto offset, con la composición hecha a mano. La portada indica «Octubre», sin año visible. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
   {
     slug: "periodico-jano-2001",
@@ -118,6 +139,19 @@ export const PIEZAS: Pieza[] = [
     imagen: { archivo: "/prensa/periodico-jano-2001.jpg", alt: "Portada del periódico «Jano», n.º 1, con dos brazos entrelazados en blanco y negro y el texto «La homosexualidad, una forma digna de vivir».", credito: "", ratio: 0.75, restringida: true },
     resumen: "Primer número del periódico «Jano», de diciembre de 2001. En su portada, dos brazos entrelazados y la frase «La homosexualidad, una forma digna de vivir».",
     contexto: "Es una de las publicaciones del movimiento LGBT colombiano que figuran entre las piezas señaladas. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
+  },
+  {
+    slug: "impreso-jaime-pardo-leal-1986",
+    corto: "Impreso de la UP: Jaime Pardo Leal",
+    titulo: "Impreso Unión Patriótica ¡Vote el 25 de mayo por Jaime Pardo Leal y las reformas políticas que propone la UP!",
+    sala: "Hacer sociedad",
+    tipo: "Impreso — tinta sobre papel, 26,5 × 13,6 cm",
+    autoria: "Editorial Colombia Nueva Ltda.",
+    fecha: "1986",
+    catalogo: 15530,
+    imagen: { archivo: "/prensa/impreso-pardo-leal-1986.jpg", alt: "Plegable verde y amarillo de la Unión Patriótica con el retrato de Jaime Pardo Leal y el texto «¡Vote el 25 de mayo por Jaime Pardo Leal y las reformas políticas que propone la UP!».", ratio: 1.467 },
+    resumen: "Plegable de 1986 de la Unión Patriótica que presenta a Jaime Pardo Leal y pide votar por él el 25 de mayo y por las reformas políticas que propone la UP.",
+    contexto: "Es un impreso de campaña de la Unión Patriótica, el movimiento político de los afiches de Jaramillo Ossa y de otros objetos sobre la violencia política de los años 80 y 90. El catálogo del Museo lo registra en la «Reserva Bóveda de Documentos». Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
   {
     slug: "afiche-bernardo-jaramillo-ossa",
@@ -267,9 +301,10 @@ export const PIEZAS: Pieza[] = [
     tipo: "Instrumento musical — piel de venado y cuero, 31,5 cm de diámetro × 60 cm de alto",
     autoria: "Fabricante desconocido",
     fecha: "2009",
+    fuenteExterna: { texto: "Elizabeth Castillo, «De la máscara al tambor», El Tiempo, 8 de julio de 2022", url: "https://www.eltiempo.com/opinion/columnistas/elizabeth-castillo/de-la-mascara-al-tambor-columna-de-elizabeth-castillo-685819" },
     imagen: { archivo: "/prensa/yembe-toque-lesbico.jpg", alt: "Yembé con una cinta naranja, y debajo la cédula que describe la batucada Toque Lésbico.", credito: "captura de @cuestionp", ratio: 0.749 },
     resumen: "Yembé de la batucada Toque Lésbico, formada en Bogotá en 2009.",
-    contexto: "Según la cédula que circuló en redes, el movimiento lésbico en Colombia surgió a finales del siglo XX dentro del feminismo y se articuló después con los colectivos LGBT. La batucada exigía el reconocimiento de la diversidad sexual y los derechos de las mujeres, y salía a las calles contra la violencia de género. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
+    contexto: "No consta en el catálogo en línea del Museo Nacional. Los datos de la pieza (fabricante desconocido, 2009, piel de venado y cuero, 31,5 cm de diámetro × 60 cm de alto) salen de la cédula que circuló en redes (captura de @cuestionp). Sobre la batucada, Elizabeth Castillo, activista y columnista, cuenta que tocaba el bombo en «El toque lésbico»: «La iniciamos mujeres lesbianas.» Según la cédula, el movimiento lésbico en Colombia surgió a finales del siglo XX dentro del feminismo y se articuló después con los colectivos LGBT, y la batucada salía a las calles contra la violencia de género. Se cuenta entre las piezas que el equipo señala como retiradas; el Museo no ha publicado el inventario.",
   },
   {
     slug: "libertinaje-y-desorden",
